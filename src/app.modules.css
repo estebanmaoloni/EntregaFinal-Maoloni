@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url("https://e1.pxfuel.com/desktop-wallpaper/266/1013/desktop-wallpaper-simple-gray-backgrounds-high-definition-dark-grey-background.jpg");
+    background-size: cover;
+}
+.contNavBar{
+    width: 100%;
+    height: 90px;
+    /* background-color: gray; */
+    background-image: url("https://img.freepik.com/vector-gratis/fondo-textura-fibra-carbono-negro_1017-23625.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699056000&semt=ais");
+    display: flex;
+}
+
+.contButtons{
+    line-height: 550%;
+    margin-left: 25px;
+}
+
+.imageNavBar{
+    width: 150px;
+    height: 90px;
+}
+.buttonsProducts{
+    border-radius: 5px;
+    border: solid 1px ;
+    width: 100px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.buttonsProducts:hover{
+    cursor: pointer;
+}
+
+.cartWidget{
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 25px;
+    width: 70px;
+    height: 30px;
+}
+
+.cartWidget:hover{
+    cursor: pointer;
+}
+
+/* Contaiener products */
+
+.productsContainer{
+    display: flex;
+}
+
+.products{
+    border: solid 1px black;
+    height: 290px;
+    width: 250px;
+    margin-left: 50px;
+}
+
+.prod1{
+    display: grid;
+}
+
+.imgProduct{
+    height: 200px;
+    width: 248px;
+}
+
+.buy{
+    background-color: green;
+    height: 35px;
+}
+
+.buy:hover{
+    cursor: pointer;
+}
