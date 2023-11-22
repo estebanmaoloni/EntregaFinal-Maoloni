@@ -1,0 +1,19 @@
+.cartWidget{
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 25px;
+    width: 70px;
+    height: 30px;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 10px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.cartWidget:hover{
+    background-color: #2980b9;
+    color: #fff;
+}

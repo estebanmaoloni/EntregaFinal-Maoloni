@@ -1,4 +1,6 @@
-function CartWidget({count}) {
+import styles from "../CartWidget/cartWidget.modules.css"
+
+function CartWidget() {
 
     return (
       <>

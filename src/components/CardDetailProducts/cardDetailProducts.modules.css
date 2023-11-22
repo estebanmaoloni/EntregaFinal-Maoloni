@@ -1,0 +1,83 @@
+.containerAllDetail{
+    display: grid;
+    place-items: center;
+    min-height: 90vh;
+
+}
+
+.containerItemsDetail{
+    width: 510px;
+    height: 585px;
+    border: solid black 4px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.imgCardDetail{
+    width: 100%;
+    height: 320px;
+    border-radius: 10px;
+}
+
+.nameCardDetail{
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+    font-size: 23px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.modelCardDetail{
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.priceCardDetail{
+    color: white;
+    -webkit-text-stroke: 0.5px black;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.containerCount{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.countNumber{
+    color: white;
+    font-size: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.btnNumber{
+    height: 30px;
+    width: 30px;
+    font-size: 25px;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.btnNumber:hover{
+    background-color: #2980b9;
+    color: #fff;
+}
+
+
+.btnCarrito button{
+    background-color: yellow;
+}
+
+.btnCancelar button{
+    background-color: rgb(156, 5, 5);
+}
+

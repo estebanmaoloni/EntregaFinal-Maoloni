@@ -1,13 +1,11 @@
 import { useEffect,useState} from "react"
-import styles from "../ItemsListContainer/itemsListContainer.modules.css"
 import { addProducts } from "../../exhaustsMock"
-import ItemsMap from "../ItemsMap/ItemsMap"
 import { useParams } from "react-router-dom"
+import DetailProductsMap from "../DetailProductsMap/DetailProductsMap";
 
+const DetailProducts = () => {
 
-const ItemsListContainer = () => {
-    
-    const {category} = useParams();
+    const {id} = useParams();
 
     const [products, setproducts] = useState([]);
     const [loading, setloading] = useState(true);
@@ -17,8 +15,8 @@ const ItemsListContainer = () => {
         setloading(true)
         addProducts()
             .then((response) => {
-                if (category) {
-                    const productsFilter = response.filter((response) => response.category === category)
+                if (id) {
+                    const productsFilter = response.filter((response) => response.id === id)
                     setproducts(productsFilter)
                     setloading(false)
                 }else{
@@ -27,13 +25,13 @@ const ItemsListContainer = () => {
                 }
             })
             .catch((error) => console.log(error))    
-    },[category])
-
+    },[id])
+    
+    console.log(products)
     return (
-        <>
-            <ItemsMap products={products} loading={loading}/>
-        </> 
+        <DetailProductsMap products={products} loading={loading}/>
     )
 }
 
-export default ItemsListContainer
+export default DetailProducts
+
