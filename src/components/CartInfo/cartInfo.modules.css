@@ -1,0 +1,18 @@
+.containerAllItems{
+    z-index: 2;
+    position: relative;
+    height: auto;
+    width: 400px;
+    background-color: rgb(84, 90, 90);
+    display: flex;
+}
+
+.containerItemsCart{
+    z-index: 2;
+}
+
+.imgCart{
+    height: 90px;
+    width: 150px;
+    z-index: 2;
+}

@@ -6,7 +6,7 @@ function NavBar() {
 
     return (
             <>
-                <div className="contNavBar">
+                <div className={"contNavBar"}>
                     <Link to="/">
                         <img src="https://www.psr-parts.com/cdn/shop/products/FIE-Logo-2_copy_75ac0c02-e859-4d92-96f7-a17db83e5bc7_740x.png?v=1663621089" alt="" srcSet="" className="imageNavBar"/>
                     </Link>

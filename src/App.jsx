@@ -2,20 +2,25 @@ import Styles from "./app.modules.css"
 import NavBar from "./components/NavBar/NavBar"
 import ItemsListContainer from "./components/ItemsListContainer/ItemsListContainer"
 import DetailProducts from "./components/DetailProducts/DetailProducts"
-import {BrowserRouter, Route, Routes} from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Footer from "./components/Footer/Footer"
+import { CartContextProvider } from "./components/Context/CartContext"
+import Cart from "./components/Cart/Cart"
+import CartWidget from "./components/CartWidget/CartWidget"
 
 function App() {
 
   return (
     <BrowserRouter>
-        <NavBar/>
+      <CartContextProvider>
+        <NavBar />
         <Routes>
-            <Route path="/" element={<ItemsListContainer/>}/>
-            <Route path="/category/:category" element={<ItemsListContainer/>}/>  
-            <Route path="/id/:id" element={<DetailProducts/>}/>  
+          <Route path="/" element={<ItemsListContainer />} />
+          <Route path="/category/:category" element={<ItemsListContainer />} />
+          <Route path="/id/:id" element={<DetailProducts />} />
         </Routes>
-      <Footer/>
+        <Footer />
+      </CartContextProvider>
     </BrowserRouter>
   )
 }
