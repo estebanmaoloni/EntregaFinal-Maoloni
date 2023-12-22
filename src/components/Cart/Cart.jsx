@@ -6,14 +6,14 @@ import CartInfo from "../CartInfo/CartInfo"
 
 const Cart = () => {
 
-    const {cartItem, total} = useContext(CartContext)
+    const {cartItem, clearCart, totalCart} = useContext(CartContext)
 
-    console.log(cartItem)
     return (
         <>
             <div className="cartContainer">
                 {cartItem.map(itm=><CartInfo key={itm.id} {...itm}/>)}
-                <h5>Total:{total}</h5>
+                <h5>Total:{totalCart}</h5>
+                <button onClick={()=>clearCart()}>C</button>
             </div>
         </>
     )

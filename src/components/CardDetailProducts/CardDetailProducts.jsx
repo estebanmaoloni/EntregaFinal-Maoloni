@@ -1,19 +1,20 @@
 import styles from "../CardDetailProducts/cardDetailProducts.modules.css"
 import Button1 from "../Button1/Button1"
-//import { useCount } from "../hooks/useCount"
 import { Link } from "react-router-dom"
 import { useContext } from "react"
 import { CartContext } from "../Context/CartContext"
+import { useCount } from "../hooks/useCount"
 
 
 
 const CardDetailProducts = ({id, img , name, model, price, stock, discountStock}) => {
 
-    const {addItem,count, add, remove,getTotal} = useContext(CartContext)
+    const {addItem} = useContext(CartContext)
+
+    const { count, add, back } = useCount (1,stock);
 
     const dobleFunction = () =>{
-        addItem({id, img, name, model, price}, count,)
-        getTotal()
+        addItem({id, img, name, model, price, stock}, count)
     }
 
     
@@ -27,7 +28,7 @@ const CardDetailProducts = ({id, img , name, model, price, stock, discountStock}
                     <h5 className="priceCardDetail">Precio: {price}Usd</h5>
                     <h5 className="priceCardDetail">Stock: {stock}</h5>
                     <div className="containerCount">
-                        <button className="btnNumber" onClick={()=>remove()}>-</button>
+                        <button className="btnNumber" onClick={()=>back()}>-</button>
                         <h5 className="countNumber">{count}</h5>
                         <button className="btnNumber" onClick={()=>add()}>+</button>
                     </div>              
