@@ -17,3 +17,8 @@
     background-color: #2980b9;
     color: #fff;
 }
+
+.divCart{
+    margin-left: auto;
+    z-index: 2;
+}

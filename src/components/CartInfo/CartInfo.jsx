@@ -9,6 +9,7 @@ const CartInfo = ({img , name, price, id, model, quantity, subTotal, stock}) => 
 
   return (
     <>
+          <div className="containerSup">
             <div className="containerAllItems">
                     <img src={img} alt="Img not found" className="imgCart"/>
                 <div className="containerItemsCart">
@@ -18,8 +19,9 @@ const CartInfo = ({img , name, price, id, model, quantity, subTotal, stock}) => 
                     <h5 className="priceCard">Stock: {stock}</h5>
                     <h5 className="priceCard">Subtotal: {subTotal}Usd</h5>
                 </div>
-                    <button onClick={()=>removeItems(id, quantity)}>X</button>
+                    <button className="removeItems" onClick={()=>removeItems(id, quantity)}>X</button>
             </div>
+          </div>  
         </>
   )
 }

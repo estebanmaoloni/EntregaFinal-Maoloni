@@ -5,6 +5,11 @@
     width: 400px;
     background-color: rgb(84, 90, 90);
     display: flex;
+
+}
+
+.containerSup{
+    display: block;
 }
 
 .containerItemsCart{
@@ -15,4 +20,16 @@
     height: 104px;
     width: 150px;
     z-index: 2;
+}
+
+.removeItems{
+    height: 30px;
+    width: 30px;
+    border-radius: 10px;
+    /* margin-left: auto; */
+    position: absolute;
+    top: 50%;
+    left: 95%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
 }

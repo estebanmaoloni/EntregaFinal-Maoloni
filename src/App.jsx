@@ -5,8 +5,9 @@ import DetailProducts from "./components/DetailProducts/DetailProducts"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Footer from "./components/Footer/Footer"
 import { CartContextProvider } from "./components/Context/CartContext"
-import Cart from "./components/Cart/Cart"
-import CartWidget from "./components/CartWidget/CartWidget"
+
+
+
 
 function App() {
 

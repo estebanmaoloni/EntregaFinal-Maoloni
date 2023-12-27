@@ -6,18 +6,24 @@ import { CartContext } from "../Context/CartContext"
 function CartWidget() {
 
   const [cartWindow, setcartWindow] = useState(false)
-  const {totalQuantitysCart} = useContext(CartContext)
+  const { totalQuantitysCart } = useContext(CartContext)
 
-  const changeStateCartWindow = () =>{
+  const changeStateCartWindow = () => {
     setcartWindow(!cartWindow)
   }
 
-    return (
-      <>
-        <button className="cartWidget" onClick={changeStateCartWindow}><i className="fa-solid fa-cart-shopping"></i>{totalQuantitysCart}</button>
-        {cartWindow && <Cart/>}
-      </>
-    )
-  }
-  
-  export default CartWidget 
+  return (
+    <>
+      {
+        totalQuantitysCart == 0 ? "Not items" : (
+          <div className="divCart">
+            <button className="cartWidget" onClick={changeStateCartWindow}><i className="fa-solid fa-cart-shopping"></i>{totalQuantitysCart}</button>
+            {cartWindow && <Cart />}
+          </div>
+        )
+      }
+    </>
+  )
+}
+
+export default CartWidget 

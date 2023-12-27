@@ -1,17 +1,22 @@
 import { useState, useEffect } from "react";
 import { createContext } from "react";
-import { collection, getDocs, query, updateDoc, doc } from "firebase/firestore";
+import { collection, getDocs, query, updateDoc, doc, serverTimestamp, addDoc } from "firebase/firestore";
 import { dataBase } from "../../config/firebaseData"
+
+
 
 export const CartContext = createContext(null)
 
 export const CartContextProvider = ({ children }) => {
+
 
     const [cartItem, setcartItem] = useState([])
 
     const [totalCart, settotalCart] = useState(0)
 
     const [totalQuantitysCart, settotalQuantitysCart] = useState(0)
+
+    //const [changes, setchanges] = useState(true);
 
     const addItem = (item, quantity = 1) => {
 
@@ -65,7 +70,24 @@ export const CartContextProvider = ({ children }) => {
         totalQuantitys()
     },[cartItem])
     
+    const addOrderDataBase = (item, userData, total) =>{
+        const newOrder = {
+            buyer: userData,
+            product: item,
+            data: serverTimestamp(),
+            total
+        }
+        addDoc(collection(dataBase,"orders"), newOrder);
+        console.log(newOrder)
+        console.log(userData)
+    }
 
+    // const discountStock = async (product) => {
+    //     const productsLocation = doc(dataBase, "exhausts", product.id)
+    //     const newStock = product.stock - 1
+    //     await updateDoc(productsLocation, { stock: newStock })
+    //     setchanges(!changes)
+    // }
 
     const objetValue = {
         cartItem,
@@ -73,7 +95,11 @@ export const CartContextProvider = ({ children }) => {
         removeItems,
         clearCart,
         totalCart,
-        totalQuantitysCart
+        totalQuantitysCart,
+        addOrderDataBase,
+        // discountStock,
+        // setchanges,
+        // changes
     }
     return <CartContext.Provider value={objetValue}>{children}</CartContext.Provider>
 }

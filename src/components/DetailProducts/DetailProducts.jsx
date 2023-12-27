@@ -1,10 +1,9 @@
 import { useContext, useEffect, useState } from "react"
-//import { addProducts } from "../../exhaustsMock"
 import { useParams } from "react-router-dom"
 import DetailProductsMap from "../DetailProductsMap/DetailProductsMap";
 import { collection, getDocs, query, updateDoc, doc } from "firebase/firestore";
 import { dataBase } from "../../config/firebaseData"
-//import { CartContext } from "../Context/CartContext"
+
 
 const DetailProducts = () => {
 
@@ -53,6 +52,7 @@ const DetailProducts = () => {
     }, [id, changes])
     return (
         <DetailProductsMap productDetailState={productDetailState} loading={loading} discountStock={discountStock} />
+
     )
 }
 

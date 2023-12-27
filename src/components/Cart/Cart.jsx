@@ -6,14 +6,17 @@ import CartInfo from "../CartInfo/CartInfo"
 
 const Cart = () => {
 
-    const {cartItem, clearCart, totalCart} = useContext(CartContext)
+    const { cartItem, clearCart, totalCart } = useContext(CartContext)
 
     return (
         <>
             <div className="cartContainer">
-                {cartItem.map(itm=><CartInfo key={itm.id} {...itm}/>)}
-                <h5>Total:{totalCart}</h5>
-                <button onClick={()=>clearCart()}>C</button>
+                {cartItem.map(itm => <CartInfo key={itm.id} {...itm} />)}
+                <div className="containerTotal">
+                    <h5 className="total">Total: {totalCart}Usd</h5>
+                    <button className="buttonClear" onClick={() => clearCart()}>C</button>
+                </div>
+
             </div>
         </>
     )
